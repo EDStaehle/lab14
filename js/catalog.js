@@ -55,7 +55,7 @@ function updateCounter() {
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
   
-  let preview = document.getElementById('cartContents');
+  let preview = document.getElementByC('cartContents');
   let ulCheck = document.querySelector('ul');
   
   if(ulCheck){
@@ -71,6 +71,7 @@ function updateCartPreview() {
   li.innerText = `Item: ${cart[i].product} Quantity:${cart[i].quantity}`;
   ul.appendChild(li);
 }
+console.log(ulCheck);
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 }
