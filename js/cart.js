@@ -41,9 +41,9 @@ function showCart() {
     let quantity = document.createElement('td');
     quantity.innerHTML = `${cartItem.quantity}`;
     row.appendChild(quantity);
-    let item = document.createElement('td');
-    item.innerHTML = `${cartItem.product}`;
-    row.apppendChild(item);
+    // let item = document.createElement('td');
+    // item.innerHTML = `${cartItem.product}`;
+    // row.apppendChild(item);
   }
   // TODO: Create a TR
   // TODO: Create a TD for the delete link, quantity,  and the item
@@ -59,6 +59,7 @@ function removeItemFromCart(event) {
       deleteLink.children[i].onclick = function () {
         cart.removeItem(cart[i]);
       }
+      console.log(deleteLink);
     })(i);
   }
 

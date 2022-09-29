@@ -12,7 +12,10 @@ function populateForm() {
   //TODO: Add an <option> tag inside the form's select for each product
   const selectElement = document.getElementById('items');
   for (let i in Product.allProducts) {
-
+    let option = document.createElement('option');
+    option.value = Product.allProducts[i].name
+    option.innerText = Product.allProducts[i].name
+    selectElement.appendChild(option);
   }
 
 }
@@ -33,41 +36,41 @@ function handleSubmit(event) {
 }
 
 // TODO: Add the selected item and quantity to the cart
-function addSelectedItemToCart(){
-    let product = document.getElementById('items').value;
-   let quantity = document.getElementById('quantity').value;
-   cart.addItem(product,quantity);
+function addSelectedItemToCart() {
+  let product = document.getElementById('items').value;
+  let quantity = document.getElementById('quantity').value;
+  cart.addItem(product, quantity);
   // DONE: suss out the item picked from the select list
   // DONE: get the quantity
   // DONE: using those, add one item to the Cart
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() { 
+function updateCounter() {
   let counter = document.getElementById('itemCount');
   counter.textContent = cart.items.length;
 }
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
-  
-  let preview = document.getElementByC('cartContents');
+
+  let preview = document.getElementById('cartContents');
   let ulCheck = document.querySelector('ul');
-  
-  if(ulCheck){
-    for(let i = 0; i< cart.length; i++ ){
+
+  if (ulCheck) {
+    for (let i = 0; i < cart.length; i++) {
       let li = document.createElement('li');
       li.innerText = `Item: ${cart[i].product} Quantity:${cart[i].quantity}`;
       ulCheck.appendChild(li);
     }
-  }else{
-  let ul = document.createElement('ul');
-  preview.appendChild(ul);
-  let li = document.createElement('li');
-  li.innerText = `Item: ${cart[i].product} Quantity:${cart[i].quantity}`;
-  ul.appendChild(li);
-}
-console.log(ulCheck);
+  } else {
+    let ul = document.createElement('ul');
+    preview.appendChild(ul);
+    let li = document.createElement('li');
+    li.innerText = `Item: ${cart[i].product} Quantity:${cart[i].quantity}`;
+    ul.appendChild(li);
+  }
+  console.log(ulCheck);
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 }
