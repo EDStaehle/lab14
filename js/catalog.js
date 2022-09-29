@@ -38,7 +38,15 @@ function handleSubmit(event) {
 
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
-  // TODO: suss out the item picked from the select list
+  console.log('items', item);
+  let submit = document.querySelector('input[type="submit"]');
+  submit.addEventListener('submit', submitHandler);
+  let submitHandler = function(){
+    let product = document.getElementById('items').value;
+   let quantity = document.getElementById('quantity').value;
+   Cart.addItem(product,quantity);
+  }
+  // DONE: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
 }
