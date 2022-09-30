@@ -26,7 +26,7 @@ function populateForm() {
 function handleSubmit(event) {
 
   // TODO: Prevent the page from reloading
-
+  event.preventDefault();
   // Do all the things ...
   addSelectedItemToCart();
   cart.saveToLocalStorage();
@@ -38,7 +38,10 @@ function handleSubmit(event) {
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
   let product = document.getElementById('items').value;
+  console.log(product);
   let quantity = document.getElementById('quantity').value;
+  console.log(quantity);
+
   cart.addItem(product, quantity);
   // DONE: suss out the item picked from the select list
   // DONE: get the quantity
