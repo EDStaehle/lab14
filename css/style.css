@@ -267,10 +267,12 @@ fieldset>input{
   }
 ol>li{
   color: #00FFCB;
+  font-size: 1vw;
   
 }
 span{
   color: #00FFCB;
+  font-size: 3vw;
   
 }
 legend{
@@ -283,4 +285,11 @@ header h1:first-child{
 header h1:last-child{
   color: #00FFCB;
   font-size: 2vw;
+}
+*{
+  color: #00FFCB;
+  font-size: 2vw;
+}
+header nav{
+  font-size: 3vw;
 }
